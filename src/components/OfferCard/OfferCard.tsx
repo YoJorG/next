@@ -9,7 +9,7 @@ function OfferCard({ title, price, values }: Offer) {
 			</div>
 			<ul className='flex flex-col text-gray-600 gap-2 py-2 px-8  rounded-md text-sm '>
 				{values.map(({ id, value, active }) => (
-					<li key={id} className={active ? 'text-gray-600 font-bold text-lg' : 'text-gray-400 text-lg line-through'}>
+					<li key={id} className={active ? 'text-gray-700 font-bold text-lg' : 'text-gray-500 text-lg line-through'}>
 						{value}
 					</li>
 				))}

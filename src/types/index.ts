@@ -15,7 +15,7 @@ type PostData = {
 	description: string
 	article: string
 	seo: Seo
-	relatedPosts: object
+	relatedPosts: Blog
 	publishedAt: string
 	image: ImageData
 }

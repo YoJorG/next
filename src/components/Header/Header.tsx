@@ -6,15 +6,17 @@ type IHeader = {
 	description: string
 }
 
+
+
 function Header({ title, description }: IHeader) {
 	return (
 		<header className=' text-green-50 relative'>
 			<Image
 				src={'/background.jpg'}
 				alt='background image'
-				className='-z-50 '
-				layout='fill'
-				objectFit='cover'
+				width={1920}
+				height={1080}
+				className='-z-50 absolute left-0 bottom-0 right-0 top-0 object-cover h-full w-full '
 				priority={true}
 			/>
 			<div className='w-full h-screen bg-black opacity-60 absolute top-0 -z-40'></div>

@@ -112,7 +112,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-	const { postData, image } = (await getPostData(params.slug)) as { postData: PostData; image: string }
+	const data = (await getPostData(params.slug)) as { postData: PostData; image: string }
+	if (!data) return notFound()
+
+	const { postData, image } = data
+
 	const url = process.env.STRAPI_URL
 	const seo = postData.seo
 	return {
@@ -140,8 +144,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 const getPostData = async (slug: string) => {
 	try {
 		const { data } = await fetchAPI(queryApi, slug)
-		if (!data || !data.blogPosts || !data.blogPosts.data || data.blogPosts.data.length === 0) {
-			throw new Error('Data not found')
+		if (!data.blogPosts.data[0]) {
+			return undefined
 		}
 		const postData: PostData = data.blogPosts.data[0].attributes
 		const image = postData.image.data.attributes.formats.medium.url

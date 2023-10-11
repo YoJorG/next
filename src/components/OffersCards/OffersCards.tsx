@@ -3,7 +3,7 @@ import OfferCard from '@/src/components/OfferCard/OfferCard'
 
 function OfferCards({ normal, special, premium }: Offers) {
 	return (
-		<section className='bg-gray-100 text-white' id='oferta'>
+		<section className='bg-gray-50 text-white' id='oferta'>
 			<div className='container mx-auto py-16 flex items-center flex-col w-full'>
 				<h2 className='text-blue-600 font-bold text-2xl mb-8 before:w-full before:h-1 before:left-0 before:-bottom-0 before:border-b-2 before:border-blue-400 before:absolute relative before:bg-blue-600 '>
 					Oferta

@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser'
 import type { PostData } from '@/src/types'
+import CardPost from '../CardPost/CardPost'
+
 const options: HTMLReactParserOptions = {
 	replace: (domNode) => {
 		if (domNode instanceof Element) {
@@ -30,23 +32,60 @@ const options: HTMLReactParserOptions = {
 
 function Article({ image, postData }: { image: String; postData: PostData }) {
 	const articleContent = parse(postData.article, options)
+	// console.log(postData)
 	const url = process.env.STRAPI_URL
+
+	const tags = postData.seo.keywords.split(',').map((key) => key.trimStart())
+	const relatedPosts = postData.relatedPosts.blogPosts.data
+	const date = new Date(postData.publishedAt).toLocaleDateString('pl-PL')
+
 	return (
 		<>
-			<article className='container mx-auto pt-28'>
-				<h1 className='text-4xl font-bold mb-4 mt-2 text-gray-900'>{postData.title}</h1>
-
-				<div className='max-w-3xl aspect-video overflow-hidden'>
-					<Image
-						className='rounded-md object-cover max-w-3xl aspect-video w-full mb-20'
-						src={url! + image}
-						width={800}
-						height={800}
-						alt='test'
-					/>
-				</div>
-				<div className='max-w-4xl mt-4 '>{articleContent}</div>
-			</article>
+			<main>
+				<article>
+					<header className='mx-auto max-w-screen-xl pt-40 text-center '>
+						<p className='text-gray-500'>Opublikowano {date}</p>
+						<h1 className='mt-2 text-3xl font-bold text-gray-900 sm:text-5xl'>{postData.title}</h1>
+						<div className='mt-6 flex flex-wrap justify-center gap-2' aria-label='Tags'>
+							{tags.map((key) => (
+								<button
+									className='rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200'
+									key={key}
+								>
+									{key}
+								</button>
+							))}
+						</div>
+						<div className='w-full flex justify-center px-2'>
+							<div className='max-w-5xl rounded-md overflow-hidden mt-10'>
+								<Image
+									className='sm:h-[34rem] w-full object-cover '
+									src={url! + image}
+									alt='Featured Image'
+									width={1920}
+									height={1080}
+								/>
+							</div>
+						</div>
+					</header>
+					<div className='mx-auto max-w-screen-md space-y-12 px-4 py-10 font-serif text-lg tracking-wide text-gray-700'>
+						<div className='max-w-4xl '>{articleContent}</div>
+					</div>
+				</article>
+			</main>
+			<div className='w-fit mx-auto mt-10 flex space-x-2'>
+				<div className='h-0.5 w-2 bg-gray-600' />
+				<div className='h-0.5 w-32 bg-gray-600' />
+				<div className='h-0.5 w-2 bg-gray-600' />
+			</div>
+			<aside aria-label='Related Articles' className='mx-auto mt-10 max-w-screen-xl py-20'>
+				<h2 className='mb-8 text-center text-3xl font-bold text-gray-900'>{postData.relatedPosts.title}</h2>
+				<ul className='mx-auto grid max-w-screen-lg justify-center px-4 sm:grid-cols-2 sm:gap-6 sm:px-8 md:grid-cols-3'>
+					{relatedPosts.map(({ id, attributes }) => (
+						<CardPost key={id} {...attributes} />
+					))}
+				</ul>
+			</aside>
 		</>
 	)
 }

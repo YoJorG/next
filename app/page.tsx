@@ -1,15 +1,11 @@
 import BoardPosts from '@/src/components/BlogPosts/BoardPosts'
 import Header from '@/src/components/Header/Header'
 import OfferCards from '@/src/components/OffersCards/OffersCards'
-import { Metadata } from 'next/types'
 import fetchAPI from '@/src/utils/fetchApi'
 import type { Blog, Offers } from '@/src/types'
-import ContactForm from '@/src/components/ContactForm/ContactForm'
 import dynamic from 'next/dynamic'
 
-const DynamicContactForm = dynamic(() => import('@/src/components/ContactForm/ContactForm'), {
-	loading: () => <p>Loading...</p>,
-})
+const DynamicContactForm = dynamic(() => import('@/src/components/ContactForm/ContactForm'))
 
 const queryApi = `query Home {
 		home {
