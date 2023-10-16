@@ -6,8 +6,6 @@ type IHeader = {
 	description: string
 }
 
-
-
 function Header({ title, description }: IHeader) {
 	return (
 		<header className=' text-green-50 relative'>
@@ -25,7 +23,7 @@ function Header({ title, description }: IHeader) {
 					<h1 className='mb-3 text-4xl font-bold'>{title}</h1>
 					<p className='mb-6 text-lg max-w-lg text-gray-100'>{description}</p>
 					<Link
-						href={'#offer'}
+						href={'#oferta'}
 						className='px-4 py-2 border-gray-200 border rounded-md hover:bg-white hover:bg-opacity-20'
 					>
 						Sprawdź oferte
