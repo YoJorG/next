@@ -47,7 +47,7 @@ const ubuntu = localFont({
 })
 
 export const metadata: Metadata = {
-	metadataBase: new URL('http://localhost:3000'),
+	metadataBase: new URL('http://localhost:3005'),
 	title: 'DriftLife - Szkoła driftu w Bydgoszczy',
 	description:
 		'Jesteśmy szkołą specjalizującą się już od 14 lat w nauce driftu, jeżeli chcesz nauczyć się latać bokiem lepiej trafić nie możesz.',
@@ -59,6 +59,27 @@ export const metadata: Metadata = {
 			rel: './favicon.ico',
 			url: './favicon.ico',
 		},
+	},
+	openGraph: {
+		title: 'DriftLife - Szkoła driftu w Bydgoszczy',
+		description: 'DriftLife to szkoła driftu znana na całym świecie.',
+		url: 'https://driftlife.site/',
+		siteName: 'DriftLife',
+		images: [
+			{
+				url: 'https://admin.driftlife.site/uploads/view_car_running_high_speed_4fbb58132d.jpg',
+				width: 800,
+				height: 600,
+			},
+			{
+				url: 'https://admin.driftlife.site/uploads/view_car_running_high_speed_4fbb58132d.jpg',
+				width: 1800,
+				height: 1600,
+				alt: 'Drifting car',
+			},
+		],
+		locale: 'pl_PL',
+		type: 'website',
 	},
 }
 

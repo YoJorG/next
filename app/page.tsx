@@ -101,19 +101,12 @@ export default async function Home() {
 
 	return (
 		<>
-			<head>
-				<meta name='google-site-verification' content='ru6L6LIOw91niIdA1FANHbwvdRxvo01D1Og6ScDMZkk' />
-			</head>
-			<body>
-				<>
-					<Header {...header} />
-					<main>
-						<OfferCards {...offers} />
-						<BoardPosts {...faturedPosts} />
-						<DynamicContactForm />
-					</main>
-				</>
-			</body>
+			<Header {...header} />
+			<main>
+				<OfferCards {...offers} />
+				<BoardPosts {...faturedPosts} />
+				<DynamicContactForm />
+			</main>
 		</>
 	)
 }
