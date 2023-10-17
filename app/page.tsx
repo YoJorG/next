@@ -4,6 +4,7 @@ import OfferCards from '@/src/components/OffersCards/OffersCards'
 import fetchAPI from '@/src/utils/fetchApi'
 import type { Blog, Offers } from '@/src/types'
 import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
 
 const DynamicContactForm = dynamic(() => import('@/src/components/ContactForm/ContactForm'))
 
@@ -100,12 +101,19 @@ export default async function Home() {
 
 	return (
 		<>
-			<Header {...header} />
-			<main className=''>
-				<OfferCards {...offers} />
-				<BoardPosts {...faturedPosts} />
-				<DynamicContactForm />
-			</main>
+			<head>
+				<meta name='google-site-verification' content='ru6L6LIOw91niIdA1FANHbwvdRxvo01D1Og6ScDMZkk' />
+			</head>
+			<body>
+				<>
+					<Header {...header} />
+					<main>
+						<OfferCards {...offers} />
+						<BoardPosts {...faturedPosts} />
+						<DynamicContactForm />
+					</main>
+				</>
+			</body>
 		</>
 	)
 }

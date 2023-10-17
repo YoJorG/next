@@ -32,7 +32,6 @@ const options: HTMLReactParserOptions = {
 
 function Article({ image, postData }: { image: String; postData: PostData }) {
 	const articleContent = parse(postData.article, options)
-	// console.log(postData)
 	const url = process.env.STRAPI_URL
 
 	const tags = postData.seo.keywords.split(',').map((key) => key.trimStart())

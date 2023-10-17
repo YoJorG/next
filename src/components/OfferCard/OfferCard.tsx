@@ -2,7 +2,7 @@ import type { Offer, OfferValue } from '@/src/types'
 
 function OfferCard({ title, price, values }: Offer) {
 	return (
-		<div className='max-w-[300px] w-full h-full bg-gray-50 border-2 border-blue-600 rounded-md overflow-hidden text-center mb-4 md:mb-0'>
+		<div className='max-w-[300px] w-full h-full bg-gray-50 border-2 border-blue-600 rounded-md overflow-hidden text-center mb-4 md:mb-0 animate-fade-up'>
 			<div className='bg-blue-600 w-full py-2 px-16'>
 				<h2 className='mb-2 text-lg'>{title}</h2>
 				<p className='text-2xl font-bold '>{price} zł</p>

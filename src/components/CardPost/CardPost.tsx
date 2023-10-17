@@ -7,9 +7,9 @@ function CardPost({ title, slug, description, image }: BlogAttributes) {
 	const url = process.env.STRAPI_URL
 
 	return (
-		<li className=' w-full max-w-xs  rounded-md overflow-hidden shadow-sm'>
+		<li className=' w-full max-w-xs  rounded-md overflow-hidden shadow-sm animate-fade-up '>
 			<article>
-				<Link href={`/blog/${slug}`} scroll={true}>
+				<Link href={`/blog/${slug}`}>
 					<Image
 						className='object-cover h-40'
 						src={url + img.url}
