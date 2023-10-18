@@ -54,14 +54,13 @@ export default function Navbar() {
 					<ul className='justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0'>
 						{navigation.map((item, idx) => {
 							return (
-								<li
-									key={idx}
-									className={`text-blue-600 hover:text-blue-800  md:hover:text-blue-600 font-bold py-2 md:mx-0 text-lg ${
-										!onTheHome ? 'md:text-blue-500' : 'md:text-white'
-									}`}
-									onClick={() => setMenuState(false)}
-								>
-									<Link href={item.path} className='block text-center '>
+								<li key={idx} onClick={() => setMenuState(false)}>
+									<Link
+										href={item.path}
+										className={`text-blue-600 hover:text-blue-800  md:hover:text-blue-600 font-bold py-2 md:mx-0 text-lg ${
+											!onTheHome ? 'md:text-blue-500' : 'md:text-white'
+										}`}
+									>
 										{item.title}
 									</Link>
 								</li>

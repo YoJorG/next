@@ -41,7 +41,7 @@ function ContactForm() {
 						<input
 							type='email'
 							id='email'
-							className='border-2 border-blue-800 py-2 rounded-md mb-2 px-1 shadow-sm'
+							className='border-2 border-blue-800 py-2 rounded-md mb-2 px-2 shadow-sm'
 							{...register('email', { required: true })}
 						/>
 						<label htmlFor='username' className='text-white'>
@@ -50,7 +50,7 @@ function ContactForm() {
 						<input
 							type='text'
 							id='username'
-							className='border-2 border-blue-800  py-2 rounded-md mb-2 px-1 shadow-sm'
+							className='border-2 border-blue-800  py-2 rounded-md mb-2 px-2 shadow-sm'
 							{...register('username', { required: true })}
 						/>
 						<label htmlFor='textarea' className='text-white rounded-md '>
@@ -59,7 +59,7 @@ function ContactForm() {
 						<textarea
 							id='textarea'
 							maxLength={512}
-							className='border-2 border-blue-800 h-48 resize-none rounded-md px-1 shadow-sm'
+							className='border-2 border-blue-800 h-48 resize-none rounded-md px-2 shadow-sm'
 							{...register('message', { required: true })}
 						></textarea>
 						<button

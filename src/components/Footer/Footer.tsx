@@ -34,7 +34,7 @@ function Footer() {
 					<div className='flex gap-4'>
 						<Link
 							href='#'
-							className='text-gray-400 transition duration-100 hover:text-blue-600 active:text-blue-700'
+							className='text-gray-500 transition duration-100 hover:text-blue-600 active:text-blue-700'
 							aria-label='social'
 						>
 							<svg
@@ -50,7 +50,7 @@ function Footer() {
 						</Link>
 						<Link
 							href='#'
-							className='text-gray-400 transition duration-100 hover:text-blue-600 active:text-blue-700'
+							className='text-gray-500 transition duration-100 hover:text-blue-600 active:text-blue-700'
 							aria-label='social2'
 						>
 							<svg
@@ -66,7 +66,7 @@ function Footer() {
 						</Link>
 						<Link
 							href='#'
-							className='text-gray-400 transition duration-100 hover:text-blue-600 active:text-blue-700'
+							className='text-gray-500 transition duration-100 hover:text-blue-600 active:text-blue-700'
 							aria-label='social3'
 						>
 							<svg
@@ -82,7 +82,7 @@ function Footer() {
 						</Link>
 						<Link
 							href='#'
-							className='text-gray-400 transition duration-100 hover:text-blue-600 active:text-blue-700'
+							className='text-gray-500 transition duration-100 hover:text-blue-600 active:text-blue-700'
 							aria-label='social4'
 						>
 							<svg
@@ -98,7 +98,7 @@ function Footer() {
 						</Link>
 					</div>
 				</div>
-				<div className='py-8 text-center text-sm text-gray-400'>&copy; - DriftLife. Wszelkie prawa zastrzeżone.</div>
+				<div className='py-8 text-center text-sm text-gray-500'>&copy; - DriftLife. Wszelkie prawa zastrzeżone.</div>
 			</footer>
 		</div>
 	)
